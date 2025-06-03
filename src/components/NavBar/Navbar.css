@@ -1,0 +1,118 @@
+.nav-container{
+    width: 100vw;
+    height: 150px;
+    padding: 0 15vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-container .logo-nav{
+    width: 20%;
+}
+
+.nav-container img{
+    height: 90px;
+    margin-right: 30px;
+}
+
+.nav-container .input-nav{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-container .login-nav{
+    width: 20%;
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-container .login-nav p,
+.nav-container .login-nav .icon-login{
+    transition: .5s all ease-in-out;
+}
+
+.nav-container .login-nav p:hover,
+.nav-container .login-nav .icon-login:hover{
+    transform: scale(1.1);
+}
+
+.nav-container .input-nav .search-input{
+    width: 400px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: transparent;
+}
+
+.nav-container .search-input::placeholder{
+    color: #bcbcbc;
+}
+
+.nav-container .input-nav .search-input:focus{
+    outline: 2px solid #fa1818; 
+}
+
+.nav-container .input-nav .btn-search-nav{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    margin-left: 10px;
+    cursor: pointer;
+    background: linear-gradient(145deg,rgb(131, 0, 0) 40%, rgba(249, 21, 21, 0.75));
+    transition: .5s all ease-in-out;
+}
+.nav-container .input-nav .btn-clean-search-disable .btn-icon-seach-nav,
+.nav-container .input-nav .btn-clean-search-nav .btn-icon-seach-nav,
+.nav-container .input-nav .btn-search-nav .btn-icon-seach-nav{
+    margin-right: 10px;
+}
+
+.nav-container .input-nav .btn-clean-search-nav:hover,
+.nav-container .input-nav .btn-search-nav:hover{
+    background-image: linear-gradient(145deg,rgba(249, 21, 21, 0.75) 10%, rgba(131, 0, 0,1));
+}
+
+.nav-container .input-nav .btn-clean-search-nav{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    margin-left: 10px;
+    cursor: pointer;
+    background-image: linear-gradient(145deg,rgb(131, 0, 0) 40%, rgba(249, 21, 21, 0.75));
+    transition: .5s all ease-in-out;
+}
+
+.nav-container .input-nav .btn-clean-search-disable{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #696969;
+    margin-left: 10px;
+    cursor: pointer;
+    background-image: linear-gradient(145deg,rgb(24, 24, 24) 40%, rgba(71, 71, 71, 0.75));
+    transition: .5s all ease-in-out;
+    cursor: not-allowed;
+}
+
+.nav-container .login-nav p{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-container .login-nav .icon-login{
+    font-size: 1.7rem;
+    margin-left: 15px;
+    color: rgba(227, 21, 249, 0.75);
+}
