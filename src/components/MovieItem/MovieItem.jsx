@@ -1,47 +1,73 @@
-// import { Link } from "react-router-dom";
-// import { FaHeart } from "react-icons/fa";
-// import useLikeEvents from "../../hooks/useLikeEvents";
+import { useState } from "react";
 import noPoster from "../../assets/noPoster.png";
 import './MovieItem.css';
+import Modal from "../Modal/Modal";
 
-const MovieItem =( { id, title, poster, type} ) => {
+const MovieItem =( { imdbID, poster } ) => {
 
-    // const { isEventLiked, toggleEventLike } = useLikeEvents (id);
 
-    // const handleSeeMoreClick = (e) => {
-    //     e.stopPropagation();
-    //     onEventClick(id)
-    // }
+    const [ movieInfo, setMovieInfo] = useState(null);
+    
+    const modalView = () => {
 
-    // const handleLikeClick = () => {
-    //     toggleEventLike();
-    // }
+        const modal = document.getElementById("otro")
+        modal.style.display = 'flex'
+        
+    }
 
+    const closeModal = () => {  
+        const closeModal = document.getElementById("otro")
+        closeModal.style.display = 'none';
+        setMovieInfo(null)
+    }
+
+    const handleButtonSearchTitle = async () => {
+
+        const url = `http://www.omdbapi.com/?apikey=ee71d404&i=${imdbID}`;
+
+        await fetch(url)
+                .then(response => response.json())
+                .then(data => setMovieInfo(data));
+
+        console.log("INFO: ",movieInfo)
+
+        modalView();
+
+    }
+   
     return(
-        <div className="movie-item-container" key={id}>
-             <img 
-                className='img-movie-item' 
-                src={ poster === "N/A" ? noPoster : poster }  alt={poster} 
-            />
-            <div className="see-more">+ detalles</div>
-            {/* <div className='title-item-movie'>
-                <img className='img-movie-item' src={poster} alt={poster} />
+        <>
+            <div className="movie-item-container" key={imdbID}>
+                <img 
+                    className='img-movie-item' 
+                    src={ poster === "N/A" ? noPoster : poster }  alt={poster} 
+                />
+                {/* <div className="see-more" onClick={handleButtonSearchTitle}>+ detalles</div> */}
             </div>
-            <div className='info-item-movie'>
-                <div className="title-item-info">
-                    <h4>{type} </h4>
-                </div>
-            </div> */}
 
-            <div className='btn-item-container'>
-                {/* <button className={ isEventLiked ? "btn-like" : "btn-no-like"} onClick={handleLikeClick}><FaHeart /></button> */}
-                {/* <button className='btn-see-more' onClick={handleSeeMoreClick} >+ Ver más */}
-                    {/* <Link to={`/detail/${id}`}>
-                        Ver más 
-                    </Link> */}
-                {/* </button> */}
+            {/* <div className="modal-container" id="modal-container"> */}
+            <div >
+                <div >
+                {/* <div className="modal-info-container"> */}
+{/* 
+                    <div className='close-container'>
+                        <button onClick={closeModal}>X</button>
+                    </div> */}
+                    
+                    <p>{movieInfo?.Title}</p>
+                    <p>{movieInfo?.Actors}</p>
+                    <p>{movieInfo?.Genre}</p>
+                    <p>{movieInfo?.Director}</p>
+                    <p>{movieInfo?.Year}</p>
+                    <p>{movieInfo?.Runtime}</p>
+                    <p>{movieInfo?.Plot}</p>
+                </div>
             </div>
-        </div>
+           
+            {/* <Modal movieInfo={movieInfo}/> */}
+        </>
+            
+      
     )
 }
 
