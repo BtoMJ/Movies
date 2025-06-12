@@ -63,8 +63,8 @@ const Home = () => {
         searchTerm === '' ? 
               <div className='img-init-container'>
                 <img 
-                  src={screen.width > 1024 ? img1 : img2} 
-                  className={screen.width > 1024 ? "imageG" : "imageS"}
+                  src={screen.width > 767 ? img1 : img2} 
+                  className={screen.width > 767 ? "imageG" : "imageS"}
                 /> 
               </div>
               :
