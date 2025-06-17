@@ -52,12 +52,69 @@
 
 }
 
-@media (768px <= width <= 1023px){
+@media (481px <= width <= 767px) and ( orientation: landscape ){
+
+    .nav-container{
+        width: 100vw;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0 3vw;
+    }
+    
+    .nav-container .logo-nav{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-container img{
+        height: 60px;
+    }
+    
+    .nav-container .input-nav{
+        width: 80%;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .nav-container .input-nav .search-input{
+        width: 200px;
+        padding: 10px 10px;
+        border-radius: 5px;
+        outline: none;
+        border: transparent;
+    }
+    
+    .nav-container .input-nav .btn-container{
+        width: 46%;
+        margin-left: 15px;
+        justify-content: space-between;
+    }
+
+    .nav-container .input-nav .btn-search-nav{
+        padding: 10px 20px;
+    }
+
+    .nav-container .input-nav .btn-clean-search-nav{
+        padding: 10px 20px;
+    }
+
+    .nav-container .input-nav .btn-clean-search-disable{
+        padding: 10px 20px;
+    }
+
+}
+
+@media (768px <= width <= 1023px) and ( orientation: portrait ){
 
     .nav-container{
         width: 100vw;
         height: 300px;
-        padding: 0 10vw;
+        padding: 0 5vw;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -111,6 +168,64 @@
     .nav-container .input-nav .btn-clean-search-disable{
         display: flex;
         padding: 10px 30px;
+    }
+
+
+}
+
+@media (768px <= width <= 1023px) and ( orientation: landscape ){
+
+    .nav-container{
+        width: 100vw;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0 5vw;
+    }
+    
+    .nav-container .logo-nav{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-container img{
+        height: 60px;
+    }
+    
+    .nav-container .input-nav{
+        width: 80%;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .nav-container .input-nav .search-input{
+        width: 300px;
+        padding: 10px 10px;
+        border-radius: 5px;
+        outline: none;
+        border: transparent;
+    }
+    
+    .nav-container .input-nav .btn-container{
+        width: 30%;
+        margin-left: 15px;
+        justify-content: space-between;
+    }
+
+    .nav-container .input-nav .btn-search-nav{
+        padding: 10px 20px;
+    }
+
+    .nav-container .input-nav .btn-clean-search-nav{
+        padding: 10px 20px;
+    }
+
+    .nav-container .input-nav .btn-clean-search-disable{
+        padding: 10px 20px;
     }
 
 

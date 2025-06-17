@@ -12,10 +12,26 @@
    
 }
 
-@media (768px <= width <= 1023px){
+@media (481px <= width <= 767px) and ( orientation: landscape ){
+
+    .img-init-container .imageS{
+        height: 60vh;
+    }
+
+}
+
+@media (768px <= width <= 1023px)  and ( orientation: portrait ){
 
     .img-init-container .imageG{
-        height: 30vh;
+        height: 25vh;
+    }
+
+}
+
+@media (768px <= width <= 1023px) and ( orientation: landscape ){
+
+    .img-init-container .imageG{
+        height: 60vh;
     }
 
 }
